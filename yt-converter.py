@@ -14,7 +14,7 @@ def download_youtube_video(url, output_path, counter):
     print(f"{Fore.LIGHTYELLOW_EX}Downloading the youtube video please wait: {url}{Style.RESET_ALL}")
     try:
         youtube = pytube.YouTube(url)
-        video = youtube.streams.get_highest_resolution()
+        video = youtube.streams.get_lowest_resolution()
         title = youtube.title
 
         custom_title = input(
@@ -94,7 +94,7 @@ while True:
                         proc.kill()
                 except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess, psutil.Error) as error:
                     print(f"{Fore.LIGHTYELLOW_EX}An error occurred while terminating the process: {error}{Style.RESET_ALL}")
-                    print(f"{Fore.LIGHTRED_EX}Error Details: {e.__class__.__name__}: {str(error)}{Style.RESET_ALL}")
+                    print(f"{Fore.LIGHTRED_EX}Error Details: {error.__class__.__name__}: {str(error)}{Style.RESET_ALL}")
                     pass
 
             if delete_file(video_filepath):  # Delete the MP4 file
