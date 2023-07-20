@@ -1,7 +1,5 @@
 # Changelog
 
-## [Released]
-
 ### Changed
 - Updated the conversion process to use moviepy for direct MP4 to MP3 conversion.
 
