@@ -1,16 +1,20 @@
-# YouTube Video to MP3 Converter for Lana
+# Changelog
 
-This script allows you to download YouTube videos and convert them to MP3 audio files.
+## [Released]
 
-## Features
+### Changed
+- Updated the conversion process to use moviepy for direct MP4 to MP3 conversion.
 
-- Download YouTube videos by providing the video URL.
-- Convert downloaded videos to MP3 audio files.
-- Customize the output file name or use the default video title.
-- Terminate processes that may lock the video file during conversion or deletion.
-- Delete the downloaded video file after conversion.
-- Retry file deletion in case of failure.
-- Colorful console output for better visibility.
+## [0.2.0] - 2023-7-18
+### Added
+- Added support for specifying a custom file name.
+
+### Changed
+- Improved error handling during download and conversion.
+
+## [0.1.0] - 2023-7-18
+### Added
+- Basic functionality to download YouTube videos.
 
 ## Known Issue
 - There is a known bug where the deletion of the downloaded .mp4 file may fail due to a file lock from another process. As a result, the script is unable to delete the .mp4 file automatically. To address this issue, you need to manually delete the .mp4 file after the conversion is complete. You will be provided with the file path of the downloaded .mp4 file in the console output.
@@ -19,10 +23,3 @@ This script allows you to download YouTube videos and convert them to MP3 audio 
 
 - Python 3.x
 - Required Python packages: pytube, moviepy, psutil, colorama
-
-## Installation
-
-1. Clone the repository or download the script file to your local machine.
-2. Install the required packages by running the following command:
-   ```shell
-   pip install pytube moviepy psutil colorama
